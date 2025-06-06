@@ -1,0 +1,7 @@
+[project]
+name = "wool-pilot"
+version = "0.1.0"
+description = "Find the best wool prices"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
