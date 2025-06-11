@@ -5,6 +5,7 @@ description = "Find the best wool prices"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi[standard]>=0.115.12",
     "playwright>=1.52.0",
     "playwright-stealth>=1.0.6",
     "pymongo>=4.13.0",

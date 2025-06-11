@@ -13,7 +13,9 @@ services:
             - mongodata:/data/db
 
     worker:
-        build: .
+        build:
+            context: .
+            dockerfile: Dockerfile.worker
         depends_on:
             - redis
             - mongo
@@ -22,6 +24,19 @@ services:
             MONGO_URL: mongodb://root:mysecurepassword@mongo:27017/
         volumes:
             - /app/.venv
+            - ".:/app"
+
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile.api
+        ports:
+            - "8000:8000"
+        depends_on:
+            - mongo
+        environment:
+            MONGO_URL: mongodb://root:mysecurepassword@mongo:27017/
+        volumes:
             - ".:/app"
 
 volumes:

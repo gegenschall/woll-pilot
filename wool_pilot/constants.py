@@ -1,0 +1,1 @@
+MONGO_DEFAULT_DATABASE = "wool"
